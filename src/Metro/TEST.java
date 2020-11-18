@@ -21,7 +21,7 @@ public class TEST {
 //    
         ticketMachine tm=new ticketMachine(1);
         tm.mainMenu();
-        System.out.println(Arrays.toString(Membercard.getListCard()));
+       
     }
     
 }

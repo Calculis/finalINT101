@@ -16,7 +16,7 @@ public class ticketMachine {
     private final Scanner scan = new Scanner(System.in);
     private final station currentStation;
     private double remainingMoney = 10000;
-    private Membercard Mcard;
+   
 
     public ticketMachine(int noStation) {
         this.currentStation = station.values()[noStation];
@@ -25,6 +25,7 @@ public class ticketMachine {
     public void mainMenu() {
         boolean status = true;
         while (status) {
+            System.out.println("\n\n\n\n\n\n\n\n\n");
             System.out.println("------Welcome to "+currentStation+" Station------");
             System.out.println("[Press 1 to purchase]");
             System.out.println("[Press 2 to Membercard]");
@@ -33,7 +34,7 @@ public class ticketMachine {
             switch (scan.nextInt()) {
                 
                 case 1:
-                    priceCalculated pc = new priceCalculated(); // รวมเป็นอีก method
+                    stationInfo pc = new stationInfo(); // รวมเป็นอีก method
                     pc.allDestination();
                     int choose = pc.chooseStation();
                     if (choose < 0 || choose==getCurrentStationIndex()) {
@@ -66,7 +67,7 @@ public class ticketMachine {
                                 
                         }
                     }
-
+                           break;
                   
                     
                 case 2:
@@ -122,7 +123,7 @@ public class ticketMachine {
         }
     }
 
-    public void payCard(String cardId, double price) {
+    private void payCard(String cardId, double price) {
         
         for (Membercard listCard : Membercard.getListCard()) {
 
@@ -136,7 +137,7 @@ public class ticketMachine {
         System.out.println("Card not found");
         mainMenu();
     }
-    public void payCash(double price){
+    private void payCash(double price){
         this.remainingMoney+=price;
         System.out.println("Purchase successfully");
     }

@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author phunon
  */
 import java.util.Scanner;
-public class priceCalculated {
+public class stationInfo {
 
   
     private final Scanner scan=new Scanner(System.in);

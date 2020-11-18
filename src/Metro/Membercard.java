@@ -67,9 +67,9 @@ public class Membercard {
        return temp;
     
    }
-   public static boolean isExist(String check){       
+   public static boolean isExist(String idCard){       
        for(int i=0;i<listCard.length;i++){
-           if(check.equals(listCard[i].getIdCard())){
+           if(idCard.equals(listCard[i].getIdCard())){
                return true;
            }
        }
