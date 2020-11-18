@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Metro;
-
+import java.util.Arrays;
 /**
  *
  * @author phunon
@@ -16,18 +16,12 @@ public class TEST {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Customer c1 = new Customer(500);
-        c1.register("Phunon");
-        
-        System.out.println(c1);
-        
-        c1.addMoneytoCard(200);
-        c1.Go();
-        System.out.println(c1);
-        c1.Go();
-        
-        System.out.println(c1);
- 
+//        ticketMachine tm=new ticketMachine(1);
+//        tm.mainMenu();
+//    
+        ticketMachine tm=new ticketMachine(1);
+        tm.mainMenu();
+        System.out.println(Arrays.toString(Membercard.getListCard()));
     }
     
 }
