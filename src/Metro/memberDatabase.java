@@ -11,7 +11,7 @@ package Metro;
  */
 public class memberDatabase {
 
-    public static Membercard memberList[] = new Membercard[0];
+    private static Membercard memberList[] = new Membercard[0];
 
     public static void addAccount(Membercard lastMember) {
         Membercard[] temp = new Membercard[Membercard.getNoOfCard()];
