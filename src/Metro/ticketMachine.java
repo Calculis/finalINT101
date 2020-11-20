@@ -25,6 +25,7 @@ public class ticketMachine {
     public void mainMenu() {
         boolean status = true;
         while (status) {
+           
             System.out.println("\n\n\n\n\n");
             System.out.println("------Welcome to "+currentStation+" Station------");
             System.out.println("[Press 1] to purchase");
@@ -48,7 +49,7 @@ public class ticketMachine {
                         System.out.println("Total price:"+price+" Please choose your payment method");
                         System.out.println("[Press 1]  pay with card");
                         System.out.println("[Press 2]  pay with cash");
-                        System.out.println("[Press 3]  cancel");
+                        System.out.println("[Press 3] to cancel");
                         int choice = scan.nextInt();
                        
                         switch (choice) {
@@ -85,11 +86,11 @@ public class ticketMachine {
                         case 2:
                             System.out.println("Please insert your IDcard:");
                             String id=scan.next();
-                            if(Membercard.isExist(id)){
-                             System.out.println("Welcome "+ Membercard.getCardById(id).getCardHolder() );
+                            if(memberDatabase.isExist(id)){
+                             System.out.println("Welcome "+ memberDatabase.getById(id).getCardHolder() );
                               System.out.println("Please insert money:");
                               int cash=scan.nextInt();
-                              Membercard.getCardById(id).addMoney(cash);
+                              memberDatabase.getById(id).addMoney(cash);
                               this.remainingMoney+=cash;
                             }else{
                                 System.out.println("This ID is not exist");
@@ -98,8 +99,8 @@ public class ticketMachine {
                         case 3:
                               System.out.println("Please insert your IDcard:");
                                 id=scan.next();
-                            if(Membercard.isExist(id)){
-                                System.out.println("Your balance "+ Membercard.getCardById(id).toString());
+                            if(memberDatabase.isExist(id)){
+                                System.out.println("Your balance "+ memberDatabase.getById(id).toString());
                             }
                             break;
                         case 0:
@@ -125,7 +126,7 @@ public class ticketMachine {
 
     private void payCard(String cardId, double price) {
         
-        for (Membercard listCard : Membercard.getListCard()) {
+        for (Membercard listCard : memberDatabase.getMemberList()) {
 
             if (listCard.getIdCard().equals(cardId)) {
                 listCard.purchaseTicket(price);

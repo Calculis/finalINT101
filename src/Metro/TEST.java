@@ -16,11 +16,11 @@ public class TEST {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        ticketMachine tm=new ticketMachine(1);
-//        tm.mainMenu();
-//    
         ticketMachine tm=new ticketMachine(1);
         tm.mainMenu();
+        System.out.println(Arrays.toString(memberDatabase.getMemberList()));
+    
+
        
     }
     
