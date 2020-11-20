@@ -11,9 +11,9 @@ import java.util.Scanner;
  */
 public class Membercard {
 
-    private String CardHolder;
+    private final String CardHolder;
     private static int noOfCard=0;
-    private String idCard;
+    private final String idCard;
     private double remainMoney;
     private static Membercard[] listCard=new Membercard[0];
 

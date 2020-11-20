@@ -15,7 +15,7 @@ public class ticketMachine {
 
     private final Scanner scan = new Scanner(System.in);
     private final station currentStation;
-    private double remainingMoney = 10000;
+    private  double remainingMoney = 10000;
    
 
     public ticketMachine(int noStation) {
@@ -25,10 +25,10 @@ public class ticketMachine {
     public void mainMenu() {
         boolean status = true;
         while (status) {
-            System.out.println("\n\n\n\n\n\n\n\n\n");
+            System.out.println("\n\n\n\n\n");
             System.out.println("------Welcome to "+currentStation+" Station------");
-            System.out.println("[Press 1 to purchase]");
-            System.out.println("[Press 2 to Membercard]");
+            System.out.println("[Press 1] to purchase");
+            System.out.println("[Press 2] to Membercard");
 //            System.out.println("Press 0 to shutdown");
             System.out.print("Your choice:");
             switch (scan.nextInt()) {
@@ -46,9 +46,9 @@ public class ticketMachine {
                         noTicket=noTicket>0? noTicket:1;
                          double price=pc.calculatePrice(this.getCurrentStationIndex(), choose)*noTicket;
                         System.out.println("Total price:"+price+" Please choose your payment method");
-                        System.out.println("[Press 1 to pay with card]");
-                        System.out.println("[Press 2 to pay with cash]");
-                        System.out.println("[Press 3 to cancel]");
+                        System.out.println("[Press 1]  pay with card");
+                        System.out.println("[Press 2]  pay with cash");
+                        System.out.println("[Press 3]  cancel");
                         int choice = scan.nextInt();
                        
                         switch (choice) {
@@ -71,10 +71,10 @@ public class ticketMachine {
                   
                     
                 case 2:
-                    System.out.println("[Press 1 to register]");
-                    System.out.println("[Press 2 to add money]");
-                    System.out.println("[Press 3 to check balance]");
-                    System.out.println("[Press 0 to go back]");
+                    System.out.println("[Press 1]  register");
+                    System.out.println("[Press 2]  add money");
+                    System.out.println("[Press 3]  check balance");
+                    System.out.println("[Press 0]  go back");
                     switch(scan.nextInt()){
                         case 1: 
                             System.out.println("Please input your name");
@@ -86,8 +86,8 @@ public class ticketMachine {
                             System.out.println("Please insert your IDcard:");
                             String id=scan.next();
                             if(Membercard.isExist(id)){
-                             System.out.println("Welcome"+ Membercard.getCardById(id).getCardHolder() );
-                              System.out.println("Please insert money");
+                             System.out.println("Welcome "+ Membercard.getCardById(id).getCardHolder() );
+                              System.out.println("Please insert money:");
                               int cash=scan.nextInt();
                               Membercard.getCardById(id).addMoney(cash);
                               this.remainingMoney+=cash;
@@ -138,8 +138,15 @@ public class ticketMachine {
         mainMenu();
     }
     private void payCash(double price){
+        System.out.println("[Press 1] to confirm payment");
+        if(scan.nextInt()==1){
         this.remainingMoney+=price;
         System.out.println("Purchase successfully");
+        }
+        else{
+            System.out.println("Payment incomplete");
+            mainMenu();
+        }
     }
     public station getCurrentStation() {
         return currentStation;
@@ -156,7 +163,7 @@ public class ticketMachine {
 
     @Override
     public String toString() {
-        return "Station:" + this.currentStation + " Remaining money:" + this.remainingMoney;
+        return "Station:" + this.currentStation + " Remaining money:" + this.remainingMoney+" BAHT";
 
     }
 
