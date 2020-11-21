@@ -1,4 +1,3 @@
-package Metro;
 
 import java.util.Scanner;
 
