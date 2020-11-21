@@ -11,14 +11,14 @@ import java.util.Scanner;
  *
  * @author phunon
  */
-public class Membercard {
+public class memberCard {
 
     private final String CardHolder;
     private static int noOfCard = 0;
     private final String idCard;
     private double remainMoney;
 
-    public Membercard(String CardHolder) { // สมัครทำบัตร
+    public memberCard(String CardHolder) { // สมัครทำบัตร
         noOfCard++;
 
         this.CardHolder = CardHolder;
@@ -43,7 +43,7 @@ public class Membercard {
 
     @Override
     public String toString() {
-        return "Cardholder-Name:" + CardHolder + " CardNo:" + idCard + " Money:" + remainMoney + " Baht";
+        return "Cardholder-Name:" + CardHolder + " CardNo:" + idCard + " Money:" + remainMoney + " Baht\n";
     }
 
     public double getRemainMoney() {

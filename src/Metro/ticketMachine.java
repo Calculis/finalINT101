@@ -80,7 +80,7 @@ public class ticketMachine {
                         case 1: 
                             System.out.println("Please input your name");
                             String name=scan.next();
-                            Membercard mc1=new Membercard(name);
+                            memberCard mc1=new memberCard(name);
                             System.out.println(mc1);
                             break;
                         case 2:
@@ -126,7 +126,7 @@ public class ticketMachine {
 
     private void payCard(String cardId, double price) {
         
-        for (Membercard listCard : memberDatabase.getMemberList()) {
+        for (memberCard listCard : memberDatabase.getMemberList()) {
 
             if (listCard.getIdCard().equals(cardId)) {
                 listCard.purchaseTicket(price);

@@ -4,22 +4,21 @@
  * and open the template in the editor.
  */
 package Metro;
-
 /**
  *
  * @author phunon
  */
 public class memberDatabase {
 
-    private static Membercard memberList[] = new Membercard[0];
+    private static memberCard memberList[] = new memberCard[0];
 
-    public static void addAccount(Membercard lastMember) {
-        Membercard[] temp = new Membercard[Membercard.getNoOfCard()];
+    public static void addAccount(memberCard lastMember) {
+        memberCard[] temp = new memberCard[memberCard.getNoOfCard()];
         for (int i = 0; i < memberList.length; i++) {
             temp[i] = memberList[i];
         }
         memberList = temp;
-        memberList[Membercard.getNoOfCard() - 1] = lastMember;
+        memberList[memberCard.getNoOfCard() - 1] = lastMember;
     }
 
     public static boolean isExist(String idCard) {
@@ -33,7 +32,7 @@ public class memberDatabase {
         return false;
     }
 
-    public static Membercard getById(String id) {
+    public static memberCard getById(String id) {
         for (int i = 0; i < memberList.length; i++) {
             if (memberList[i].getIdCard().equals(id)) {
                 return memberList[i];
@@ -44,7 +43,7 @@ public class memberDatabase {
         return null;
     }
 
-    public static Membercard[] getMemberList() {
+    public static memberCard[] getMemberList() {
         return memberList;
     }
 
