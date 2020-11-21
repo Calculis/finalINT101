@@ -26,7 +26,7 @@ public class memberDatabase {
             if (memberList[i].getIdCard().equals(idCard)) {
                 return true;
             } else {
-                return false;
+                
             }
         }
         return false;
@@ -37,7 +37,7 @@ public class memberDatabase {
             if (memberList[i].getIdCard().equals(id)) {
                 return memberList[i];
             } else {
-                return null;
+               
             }
         }
         return null;

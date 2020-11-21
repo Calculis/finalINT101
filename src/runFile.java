@@ -5,6 +5,7 @@
  */
 
 import java.util.Scanner;
+import java.util.Arrays;
 /**
  *
  * @author phunon
@@ -14,6 +15,7 @@ public class runFile {
         System.out.println("set ticket Machine station:");
         ticketMachine tm=new ticketMachine(new Scanner(System.in).nextInt());
         tm.mainMenu();
+            
     }
     
 }
