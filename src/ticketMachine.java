@@ -90,8 +90,10 @@ public class ticketMachine {
                              System.out.println("Welcome "+ memberDatabase.getById(id).getCardHolder() );
                               System.out.println("Please insert money:");
                               int cash=scan.nextInt();
+                              if(cash>0){
                               memberDatabase.getById(id).addMoney(cash);
                               this.remainingMoney+=cash;
+                              } else{ System.out.println("Error!");}
                             }else{
                                 System.out.println("This ID is not exist");
                             }

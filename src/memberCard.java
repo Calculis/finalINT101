@@ -27,6 +27,9 @@ public class memberCard {
     }
 
     public void addMoney(double cash) { //เติมเงิน
+        if(cash<0){
+            return;
+        }
         remainMoney += cash;
         System.out.println("Add money success");
     }
