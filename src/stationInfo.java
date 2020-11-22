@@ -27,7 +27,7 @@ public class stationInfo {
 
     public void allDestination() {
         for (int i = 0; i < station.values().length; i++) {
-            System.out.println("กด " + i + " ไป " + station.values()[i]);
+            System.out.println("Press " + i + " to go " + station.values()[i]);
         }
     }
     public int chooseStation(){

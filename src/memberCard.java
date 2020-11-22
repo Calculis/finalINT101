@@ -17,7 +17,7 @@ public class memberCard {
     private final String idCard;
     private double remainMoney;
 
-    public memberCard(String CardHolder) { // สมัครทำบัตร
+    public memberCard(String CardHolder) { 
         noOfCard++;
 
         this.CardHolder = CardHolder;
@@ -26,7 +26,7 @@ public class memberCard {
         memberDatabase.addAccount(this);
     }
 
-    public void addMoney(double cash) { //เติมเงิน
+    public void addMoney(double cash) { 
         if(cash<0){
             return;
         }
@@ -34,7 +34,7 @@ public class memberCard {
         System.out.println("Add money success");
     }
 
-    public void purchaseTicket(double cash) { // หักเงินจากการซื้อตั๋ว
+    public void purchaseTicket(double cash) { 
         if (remainMoney < cash) {
             System.out.println("Purchase failed: No enough money!");
         } else {

@@ -35,7 +35,7 @@ public class ticketMachine {
             switch (scan.nextInt()) {
                 
                 case 1:
-                    stationInfo pc = new stationInfo(); // รวมเป็นอีก method
+                    stationInfo pc = new stationInfo(); 
                     pc.allDestination();
                     int choose = pc.chooseStation();
                     if (choose < 0 || choose==getCurrentStationIndex()) {
